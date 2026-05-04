@@ -10,6 +10,15 @@ class Post extends Model
     const UPDATED_AT = 'updatedAt';
     const CREATED_AT = 'createdAt';
 
+    protected $fillable = [
+        'slug',
+        'authorId',
+        'title',
+        'content',
+        'cover',
+        'status',
+    ];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'authorId ');
